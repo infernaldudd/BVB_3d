@@ -1,0 +1,520 @@
+{
+  "model": "BVB Basel legacy outdoor ticket machine; reference-led, non-certified reconstruction",
+  "units": "metres",
+  "orientation": {
+    "front": "-Y",
+    "height": "+Z",
+    "width": "+X"
+  },
+  "estimated_shell_dimensions_m": {
+    "width": 0.79,
+    "depth": 0.49,
+    "height": 1.075
+  },
+  "estimated_pedestal_height_m": 0.453,
+  "bounds_min_m": [
+    -0.4105,
+    -0.277,
+    0.0
+  ],
+  "bounds_max_m": [
+    0.395,
+    0.2505,
+    1.53055
+  ],
+  "size_m": [
+    0.8055,
+    0.5275,
+    1.53055
+  ],
+  "component_count": 76,
+  "total_triangles": 3868,
+  "texture_files": [
+    "basel_network_map_illustrative.png",
+    "dark_machined_metal_basecolor.png",
+    "dark_machined_metal_metallic_roughness.png",
+    "dark_machined_metal_normal.png",
+    "face_aluminium_basecolor.png",
+    "face_aluminium_metallic_roughness.png",
+    "face_aluminium_normal.png",
+    "green_powdercoat_basecolor.png",
+    "green_powdercoat_metallic_roughness.png",
+    "green_powdercoat_normal.png",
+    "green_weathered_top_basecolor.png",
+    "green_weathered_top_metallic_roughness.png",
+    "green_weathered_top_normal.png",
+    "lcd_glass_basecolor.png",
+    "pedestal_brushed_steel_basecolor.png",
+    "pedestal_brushed_steel_metallic_roughness.png",
+    "pedestal_brushed_steel_normal.png"
+  ],
+  "parts": [
+    {
+      "name": "C01_outer_green_powdercoated_cabinet",
+      "vertices": 146,
+      "triangles": 282,
+      "material": "Green_powder_coated_steel"
+    },
+    {
+      "name": "C02_top_green_weathered_sheet",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Top_flaking_paint"
+    },
+    {
+      "name": "C00_open_green_front_shell",
+      "vertices": 132,
+      "triangles": 52,
+      "material": "Green_powder_coated_steel"
+    },
+    {
+      "name": "C03_top_lip_front",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Green_powder_coated_steel"
+    },
+    {
+      "name": "C04_lower_housing_joint",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "C05_rear_service_seam",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "B01_stainless_foundation_plinth",
+      "vertices": 146,
+      "triangles": 288,
+      "material": "Brushed_stainless_pedestal"
+    },
+    {
+      "name": "B02_front_service_join",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Satin_steel_slot"
+    },
+    {
+      "name": "B03_front_toe_panel",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "B04_plinth_top_hem",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "B05_plinth_foot_base",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Brushed_stainless_pedestal"
+    },
+    {
+      "name": "B06_small_front_screw_-259_400",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "B06_small_front_screw_-259_255",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "B06_small_front_screw_259_400",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "B06_small_front_screw_259_255",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F01_formed_anodized_aluminium_curved_face",
+      "vertices": 920,
+      "triangles": 358,
+      "material": "Weathered_brushed_aluminium_face"
+    },
+    {
+      "name": "F02_screen_anti_vandal_rubber_gasket_lower",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Black_urethane_seals"
+    },
+    {
+      "name": "F02_screen_anti_vandal_rubber_gasket_upper",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Black_urethane_seals"
+    },
+    {
+      "name": "F02_screen_anti_vandal_rubber_gasket_left",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Black_urethane_seals"
+    },
+    {
+      "name": "F02_screen_anti_vandal_rubber_gasket_right",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Black_urethane_seals"
+    },
+    {
+      "name": "F03_machined_screen_bezel_lower",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F03_machined_screen_bezel_upper",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F03_machined_screen_bezel_left",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F03_machined_screen_bezel_right",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F04_screen_inner_wall_lower",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_lcd_frame"
+    },
+    {
+      "name": "F04_screen_inner_wall_upper",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_lcd_frame"
+    },
+    {
+      "name": "F04_screen_inner_wall_left",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_lcd_frame"
+    },
+    {
+      "name": "F04_screen_inner_wall_right",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_lcd_frame"
+    },
+    {
+      "name": "F05_recessed_worn_LCD_glass",
+      "vertices": 4,
+      "triangles": 2,
+      "material": "LCD_glass"
+    },
+    {
+      "name": "F06_keypad_silver_sidepanel",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Weathered_brushed_aluminium_face"
+    },
+    {
+      "name": "P01_coin_insertion_satin_chrome_ring",
+      "vertices": 160,
+      "triangles": 320,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "P02_coin_slot_dark_inset",
+      "vertices": 82,
+      "triangles": 160,
+      "material": "Interior_void"
+    },
+    {
+      "name": "P03_vertical_coin_slot_cut",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Satin_steel_slot"
+    },
+    {
+      "name": "T01_ticket_exit_steel_trim_lower",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "T01_ticket_exit_steel_trim_upper",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "T01_ticket_exit_steel_trim_left",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "T01_ticket_exit_steel_trim_right",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "T02_ticket_delivery_void",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Interior_void"
+    },
+    {
+      "name": "T03_ticket_slot_backing",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Satin_steel_slot"
+    },
+    {
+      "name": "T04_lower_ticket_lip",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "T05_ticket_feeder_guides",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_00",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_01",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_02",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_03",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_04",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_05",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_06",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_07",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_08",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_09",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_10",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_11",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_12",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_13",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_14",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_15",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "T06_rib_16",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "P04_contactless_white_trim",
+      "vertices": 160,
+      "triangles": 320,
+      "material": "Satin_steel_slot"
+    },
+    {
+      "name": "P05_contactless_aged_plastic",
+      "vertices": 82,
+      "triangles": 160,
+      "material": "Aged_cream_plastic"
+    },
+    {
+      "name": "P06_lower_right_pale_push_button",
+      "vertices": 82,
+      "triangles": 160,
+      "material": "White_polycarbonate"
+    },
+    {
+      "name": "P07_center_scuffed_round_pictogram",
+      "vertices": 82,
+      "triangles": 160,
+      "material": "Aged_cream_plastic"
+    },
+    {
+      "name": "F07_outer_cabinet_fastener_0_0",
+      "vertices": 42,
+      "triangles": 80,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F07_outer_cabinet_fastener_0_1",
+      "vertices": 42,
+      "triangles": 80,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F07_outer_cabinet_fastener_1_0",
+      "vertices": 42,
+      "triangles": 80,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F07_outer_cabinet_fastener_1_1",
+      "vertices": 42,
+      "triangles": 80,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "M01_left_side_map_mount_plate",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "M02_illustrative_Basel_network_sheet",
+      "vertices": 4,
+      "triangles": 2,
+      "material": "Basel_network_information_poster"
+    },
+    {
+      "name": "M03_map_corner_screw_0_0",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "M03_map_corner_screw_0_1",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "M03_map_corner_screw_1_0",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "M03_map_corner_screw_1_1",
+      "vertices": 34,
+      "triangles": 64,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "R01_back_door_top_seam",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Dark_bead_blasted_aluminium"
+    },
+    {
+      "name": "R02_rear_round_lock",
+      "vertices": 82,
+      "triangles": 160,
+      "material": "Anodized_silver_hardware"
+    },
+    {
+      "name": "F08_left_vertical_green_case_hem",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Green_powder_coated_steel"
+    },
+    {
+      "name": "F09_right_vertical_green_case_hem",
+      "vertices": 24,
+      "triangles": 12,
+      "material": "Green_powder_coated_steel"
+    }
+  ],
+  "reference_notes": [
+    "3 supplied views: front left 3/4; upper left side; full frontal",
+    "No machine serial number or manufacturer dimension plate visible",
+    "Cartographic side graphic is illustrative, not a BVB official/functional map",
+    "Top black circular object in second photo omitted as an unconfirmed loose object"
+  ],
+  "qa_thresholds": {
+    "target_triangle_count": "<25000",
+    "nonempty_materials": "true",
+    "no_missing_external_gltf_textures": "GLB self-contained"
+  }
+}
