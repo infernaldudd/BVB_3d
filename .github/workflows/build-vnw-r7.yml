@@ -71,5 +71,7 @@ jobs:
             echo "No new generated asset changes."
           else
             git commit -m "Generate VNW R7 R6 prototype GLBs, 2K textures, and validation"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
