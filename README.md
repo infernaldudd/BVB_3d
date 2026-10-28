@@ -36,3 +36,11 @@ Five defects identified during render review and fixed before the GitHub export:
 - Direct unlit-metal previews were misleading → reviewed in neutral diffuse lighting while keeping PBR maps in the export.
 
 **Limits:** dimensions are estimated from photographs, not scanned or manufacturer verified. The side network map is newly generated and illustrative, *not* an official BVB timetable. This is a static game asset with no functional ticket sale logic.
+## Complete handoff and additional exports
+
+- **[Technical handoff / next-steps and critical QA](docs/HANDOFF.md)** — reference observations, proportions, materials, corrections, remaining limitations and acceptance gates.
+- **[QA model report](qa/qa_model_report.json)** — recorded dimensions, mesh counts, triangle counts, part names and material associations.
+- **[Full OBJ interchange export](assets/obj/BVB_legacy_ticket_machine.obj)** with [MTL](assets/obj/material.mtl) and the 7 diffuse images in [assets/obj/](assets/obj/). For richer PBR materials, prefer GLB.
+- **[Compact GLB variant](assets/BVB_legacy_ticket_machine_compact_PBR.glb)** — 1.38 MB, 384 px max embedded textures; same geometry (76 meshes, 3,868 triangles). Lower texture resolution only, not a geometric LOD.
+
+The original full-resolution authored ZIP stays available in the originating ChatGPT conversation; the generator can regenerate all full-size textures and exports locally.
