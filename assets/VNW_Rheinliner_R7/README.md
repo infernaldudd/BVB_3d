@@ -22,9 +22,17 @@ No Unreal Engine 5.7 in-game driving, player collision, door-state switching, cu
 
 ## Source and binary status on GitHub
 
-The actual generated source code, GLB files, 40-view inspection images and original PBR textures currently exist in the **ChatGPT project download**, not yet as binary assets in this repository. They have **not** been falsely marked as pushed to GitHub. The repository's GitHub connector cannot directly take the large local binary files from the modeling runtime.
+**Successfully built, validated, and committed to this repository by GitHub Actions run [40772326376](https://github.com/infernaldudd/BVB_3d/actions/runs/40772326376).** Files now present at [assets/VNW_Rheinliner_R7/exports/](./exports/) include:
 
-To add the prepared assets, extract `VNW_Rheinliner_R7_R6_Review_Package.zip` supplied in the ChatGPT conversation to a local folder, inspect `qa/six_pass_audit.md`, and then commit the corrected `exports/`, `textures/`, `qa/`, and `generate_vnw_tram.py` alongside this README.
+- `VNW_Rheinliner_R7_Complete.glb` (8.68 MB; complete current scene / prototype animation tracks)
+- `VNW_Rheinliner_R7_High.glb`, `VNW_Rheinliner_R7_Medium.glb`, `VNW_Rheinliner_R7_Low.glb` (LOD variants)
+- `VNW_Rheinliner_R7_Collisions.glb` (collision proxy)
+- `textures/VNW_Oak_BaseColor_2K.png`, `VNW_Floor_BaseColor_2K.png`, `VNW_BrushedSteel_BaseColor_2K.png`
+- `documentation/asset_manifest.json`, `documentation/build_validation.json`, `documentation/build_log.txt`
+
+Reproducible generator: [source/VNW_Rheinliner_R7/generate_vnw_tram.py](../../source/VNW_Rheinliner_R7/generate_vnw_tram.py). Multi-view renderer: [render_40_inspection.py](../../source/VNW_Rheinliner_R7/render_40_inspection.py). Audit: [six_pass_audit.py](../../source/VNW_Rheinliner_R7/qa/six_pass_audit.py).
+
+The **actual 40 rendered inspection images and contact sheets** are provided in the ChatGPT downloadable R6 review package, rather than committed as binaries to this GitHub repo. The model is not yet photorealistically identical to the real Flexity and was not validated in Unreal Engine; all QA failures below remain valid.
 
 ## Technical references
 
