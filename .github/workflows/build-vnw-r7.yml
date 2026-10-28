@@ -1,0 +1,75 @@
+name: Build VNW Rheinliner R7 preview assets
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'source/VNW_Rheinliner_R7/generate_vnw_tram.py'
+      - '.github/workflows/build-vnw-r7.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out model repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install generator dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy==2.3.5" "trimesh==4.11.1" "scipy==1.17.0" "pillow==12.3.0"
+      - name: Generate reproducible R6 3D model and LOD files
+        run: |
+          python -u source/VNW_Rheinliner_R7/generate_vnw_tram.py | tee vnw_build_log.txt
+      - name: Validate generated assets
+        run: |
+          python - <<'PY'
+          import json, pathlib, trimesh
+          r=pathlib.Path('source/VNW_Rheinliner_R7')
+          names=['Complete','High','Medium','Low','Collisions']
+          summary={}
+          for name in names:
+              p=r/'exports'/f'VNW_Rheinliner_R7_{name}.glb'
+              assert p.is_file() and p.stat().st_size>5000, str(p)
+              scene=trimesh.load(str(p),force='scene')
+              assert len(scene.geometry)>0, name
+              summary[name]={'size_bytes':p.stat().st_size,
+                             'mesh_groups':len(scene.geometry),
+                             'extents_m':[round(float(v),5) for v in scene.extents]}
+          scene=trimesh.load(str(r/'exports'/'VNW_Rheinliner_R7_Complete.glb'),force='scene')
+          names=set(scene.graph.nodes)
+          import re
+          leaves=[n for n in names if re.fullmatch(r'DOOR_S\d{2}_D\d_[LR]_[AB]',n)]
+          assert len(leaves)==14, leaves
+          assert 42.80 < scene.extents[0] < 42.90, scene.extents
+          assert 2.29 < scene.extents[1] < 2.32, scene.extents
+          summary['validation']='GLBs load, 14 named leaves, overall envelope approximately correct'
+          (r/'exports'/'build_validation.json').write_text(json.dumps(summary,indent=2))
+          print(json.dumps(summary,indent=2))
+          PY
+      - name: Publish reproducible prototype files (not production-approved)
+        run: |
+          mkdir -p assets/VNW_Rheinliner_R7/{exports,textures,documentation}
+          cp source/VNW_Rheinliner_R7/exports/*.glb assets/VNW_Rheinliner_R7/exports/
+          cp source/VNW_Rheinliner_R7/exports/build_validation.json assets/VNW_Rheinliner_R7/documentation/
+          cp source/VNW_Rheinliner_R7/documentation/asset_manifest.json assets/VNW_Rheinliner_R7/documentation/
+          cp source/VNW_Rheinliner_R7/textures/*.png assets/VNW_Rheinliner_R7/textures/
+          cp vnw_build_log.txt assets/VNW_Rheinliner_R7/documentation/build_log.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/VNW_Rheinliner_R7/
+          if git diff --cached --quiet; then
+            echo "No new generated asset changes."
+          else
+            git commit -m "Generate VNW R7 R6 prototype GLBs, 2K textures, and validation"
+            git push
+          fi
