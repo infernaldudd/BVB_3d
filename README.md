@@ -4,9 +4,9 @@ Reference-led reconstruction based on three supplied photographs of a green BVB 
 
 ## Download the real 3D model
 
-**[BVB_legacy_ticket_machine_PBR.glb](assets/BVB_legacy_ticket_machine_PBR.glb)** — optimized **2 MB GLB**, 76 mesh components and 3,868 triangles. Embedded PBR metallic-roughness, base-color and normal textures. The green steel case, U-shaped aluminium face, recessed LCD and ticket outlet are all geometry, not a 2D image.
+**[BVB_legacy_ticket_machine_PBR.glb](assets/BVB_legacy_ticket_machine_PBR.glb)** — **flat-front V2**, optimized **2.88 MB GLB**, **51 mesh components** and **3,598 triangles**. Embedded PBR metallic-roughness, base-color and normal textures. The green steel case, U-shaped aluminium face, recessed LCD and ticket outlet are all geometry, not a 2D image.
 
-The full-resolution 17 MB GLB, OBJ/MTL with individually generated texture files, preview renders, and the original photography are retained in the originating ChatGPT delivery ZIP rather than duplicated in this repository.
+The full-resolution 17 MB GLB, OBJ/MTL and individual texture maps are included in the ChatGPT **Flat Fix V2** ZIP rather than duplicated in the GitHub repository. For the exact repair and checks, read [FLAT_FRONT_FIX.md](docs/FLAT_FRONT_FIX.md) and [QA_FLAT_FIX.json](qa/QA_FLAT_FIX.json).
 
 ## Rebuild high-resolution asset + texture maps
 
@@ -27,7 +27,7 @@ Import the **GLB** to preserve PBR maps. Generate game-specific LODs and collisi
 
 ## Visual critique and fixes
 
-Five defects identified during render review and fixed before the GitHub export:
+Initial visual defects corrected in V1:
 
 - Green cabinet originally occluded the LCD and ticket opening → actual opening geometry cut into front.
 - Left transit map was mirrored/backface-invisible → corrected mesh winding/UVs.
@@ -44,3 +44,13 @@ Five defects identified during render review and fixed before the GitHub export:
 - **[Compact GLB variant](assets/BVB_legacy_ticket_machine_compact_PBR.glb)** — 1.38 MB, 384 px max embedded textures; same geometry (76 meshes, 3,868 triangles). Lower texture resolution only, not a geometric LOD.
 
 The original full-resolution authored ZIP stays available in the originating ChatGPT conversation; the generator can regenerate all full-size textures and exports locally.
+
+## Flat-front V2 — Oct 28, 2026
+
+- Replaced intersecting ticket-trim prisms with one unified planar bezel.
+- Eliminated 17 overlapping feeder ribs and a 20 mm front-projecting metal lip.
+- Recessed the dark ticket cavity by 8 mm; bezel now projects 1.5 mm from the face.
+- Flattened the screen bezel, buttons and pedestal seams.
+- Re-imported and checked the optimized GLB: 51 named meshes, 3,598 triangles; no front-cabinet or fascia triangles obstruct the LCD or ticket slot. See [quantitative QA](qa/QA_FLAT_FIX.json).
+
+**Verification limits:** numeric aperture and overlap checks pass, but inspect reflections and depth artifacts in Unreal Engine or Blender under your chosen materials and lighting setup.
