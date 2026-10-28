@@ -1,0 +1,53 @@
+{
+  "geometry_revision": "V2 \u2014 flat-front overlap correction",
+  "model": "BVB Basel green street ticket machine",
+  "component_count": 51,
+  "triangle_count": 3598,
+  "bounds_m": [
+    [
+      -0.4104999899864197,
+      -0.25999999046325684,
+      0.0
+    ],
+    [
+      0.39500001072883606,
+      0.25049999356269836,
+      1.5305500030517578
+    ]
+  ],
+  "ticket_bezel_front_offset_mm": 1.5,
+  "ticket_cavity_recess_mm": 8.0,
+  "aperture_visibility_checks": [
+    {
+      "mesh": "F01_formed_anodized_aluminium_curved_face",
+      "aperture": "screen",
+      "unwanted_front_triangle_area_sq_m": 9e-09
+    },
+    {
+      "mesh": "F01_formed_anodized_aluminium_curved_face",
+      "aperture": "ticket",
+      "unwanted_front_triangle_area_sq_m": 0.0
+    },
+    {
+      "mesh": "C00_open_green_front_shell",
+      "aperture": "screen",
+      "unwanted_front_triangle_area_sq_m": 0.0
+    },
+    {
+      "mesh": "C00_open_green_front_shell",
+      "aperture": "ticket",
+      "unwanted_front_triangle_area_sq_m": 0.0
+    }
+  ],
+  "fixes": [
+    "Replaced intersecting trim prisms with one annular face",
+    "Removed front ticket lip protruding ~20mm",
+    "Removed 17 overlapping delivery ribs",
+    "Made ticket cavity flat, matte and recessed",
+    "Flattened front face and control offsets",
+    "Replaced stacked LCD bezel with one annular face",
+    "Flattened pedestal seams"
+  ],
+  "checks_passed": true,
+  "warning": "Only geometric validation performed; final in-engine shading and lighting must still be reviewed."
+}
