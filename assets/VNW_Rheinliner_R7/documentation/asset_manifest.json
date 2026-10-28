@@ -1,0 +1,67 @@
+{
+  "vehicle": "VNW Rheinliner R7 (fictional, original exterior identity)",
+  "status": "Reference-informed R3 geometrical revision; NOT photorealistic or production complete",
+  "dimensions_m": {
+    "overall_length": 42.86,
+    "width": 2.3,
+    "target_lowered_height": 3.7,
+    "roof_height": 3.29,
+    "track_gauge": 1.0
+  },
+  "sections": 7,
+  "module_lengths_m": [
+    6.6,
+    6.1,
+    5.65,
+    6.0,
+    5.65,
+    6.1,
+    6.76
+  ],
+  "section_centers_m": [
+    -18.13,
+    -11.780000000000001,
+    -5.905,
+    -0.08000000000000007,
+    5.745,
+    11.620000000000001,
+    18.05
+  ],
+  "door_leaves": 14,
+  "door_openings": 8,
+  "door_layout": "right side 6 double, 2 single",
+  "passenger_seats": 82,
+  "powered_bogie_models": 4,
+  "axle_assemblies": 8,
+  "articulations": 6,
+  "mesh_faces": 74888,
+  "lod_triangles": {
+    "high": 74888,
+    "medium": 74504,
+    "low": 49732
+  },
+  "nodes": 339,
+  "animations": [
+    "DEMO_Doors_Open_Close_3p3s",
+    "DEMO_Wheels_Turn",
+    "DEMO_Pantograph_Deploy",
+    "DEMO_Section_Yaw_Rig"
+  ],
+  "models": [
+    "exports/VNW_Rheinliner_R7_Complete.glb",
+    "exports/VNW_Rheinliner_R7_Collisions.glb",
+    "exports/VNW_Rheinliner_R7_High.glb",
+    "exports/VNW_Rheinliner_R7_Medium.glb",
+    "exports/VNW_Rheinliner_R7_Low.glb"
+  ],
+  "reference_basis": "Manufacturer Basel Flexity: seven modules, 8 passenger doors (6 double + 2 single), 2300mm width; model is original fictional styling, not identical replica.",
+  "limitations": [
+    "No full Blender .blend or FBX until Blender import helper is run",
+    "No real kinematic curve following/IK; demonstration object animation only",
+    "Door collision state needs to be driven by UE actor",
+    "No actual UE game collision/performance testing",
+    "Three geometry-stripped LOD variants are provided but UE cross-LOD animation/collision is not tested",
+    "Procedural materials are representative, not scan-quality",
+    "No manufacturer-endorsed IP clearance"
+  ]
+}

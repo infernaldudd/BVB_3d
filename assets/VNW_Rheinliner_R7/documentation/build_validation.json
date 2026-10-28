@@ -1,0 +1,48 @@
+{
+  "Complete": {
+    "size_bytes": 8684164,
+    "mesh_groups": 298,
+    "extents_m": [
+      42.86,
+      2.3025,
+      3.686
+    ]
+  },
+  "High": {
+    "size_bytes": 8684312,
+    "mesh_groups": 298,
+    "extents_m": [
+      42.86,
+      2.3025,
+      3.686
+    ]
+  },
+  "Medium": {
+    "size_bytes": 8679580,
+    "mesh_groups": 298,
+    "extents_m": [
+      42.86,
+      2.3025,
+      3.686
+    ]
+  },
+  "Low": {
+    "size_bytes": 8326784,
+    "mesh_groups": 291,
+    "extents_m": [
+      42.86,
+      2.3025,
+      3.686
+    ]
+  },
+  "Collisions": {
+    "size_bytes": 20668,
+    "mesh_groups": 48,
+    "extents_m": [
+      42.65,
+      2.315,
+      2.895
+    ]
+  },
+  "validation": "GLBs load, 14 named leaves, overall envelope approximately correct"
+}
