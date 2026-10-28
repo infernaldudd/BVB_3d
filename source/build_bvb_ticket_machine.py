@@ -332,13 +332,13 @@ box_obj('C02_top_green_weathered_sheet',(0,0,TOP+.0013),(W-.02,D-.02,.0025),ROOF
 # rolled cabinet seams on left/right and service door at rear
 poly_plate('C00_open_green_front_shell', [(-W/2+.013,Z0+.003),(W/2-.013,Z0+.003),(W/2-.013,TOP-.003),(-W/2+.013,TOP-.003)], [[(-.234,1.060),(.184,1.060),(.184,1.356),(-.234,1.356)],[(-.204,.674),(.156,.674),(.156,.745),(-.204,.745)]],YFRONT+.001,.009,GREEN)
 box_obj('C03_top_lip_front',(0,YFRONT-.004,TOP-.022),(W-.017,.008,.006),GREEN)
-box_obj('C04_lower_housing_joint',(0,YFRONT-.005,Z0+.082),(W-.025,.004,.0028),DARK)
+box_obj('C04_lower_housing_joint',(0,YFRONT-.0025,Z0+.082),(W-.025,.0015,.0015),DARK)
 box_obj('C05_rear_service_seam',(W/2-.035,D/2+.003,(TOP+Z0)/2),(.002,.002,H-.041),DARK)
 # narrower steel plinth with panel joints
 rounded_shell('B01_stainless_foundation_plinth',.602,.352,0,BASE_H,.004,PED,cy=.012)
-box_obj('B02_front_service_join',(0,-.167,.216),(.53,.003,.003),GUNMETAL)
-box_obj('B03_front_toe_panel',(0,-.169,.038),(.56,.003,.062),DARK)
-box_obj('B04_plinth_top_hem',(0,-.170,BASE_H-.019),(.58,.006,.0045),BRIGHT)
+box_obj('B02_front_service_join',(0,-.1654,.216),(.53,.001,.0014),GUNMETAL)
+box_obj('B03_front_toe_panel',(0,-.1652,.038),(.56,.001,.062),PED)
+box_obj('B04_plinth_top_hem',(0,-.1655,BASE_H-.019),(.58,.001,.0014),BRIGHT)
 box_obj('B05_plinth_foot_base',(0,.012,.014),(.61,.37,.012),PED)
 for dx in [-.259,.259]:
  for dz in [.400,.255]:disc('B06_small_front_screw_%s_%s'%(int(dx*1000),int(dz*1000)),dx,-.176,dz,.004,.002,BRIGHT,16)
@@ -357,13 +357,13 @@ def rect_loop(r):
  a,b,c,d=r
  return [(a,c),(b,c),(b,d),(a,d)]
 holes=[rect_loop(screen_rect),rect_loop(slot_rect)]
-face_y=YFRONT-.007
-poly_plate('F01_formed_anodized_aluminium_curved_face',outer,holes,face_y,.004,FACE)
+face_y=YFRONT-.003
+poly_plate('F01_formed_anodized_aluminium_curved_face',outer,holes,face_y,.002,FACE)
 # inner black rubber gasket behind screen, forms deep dark aperture
 ring_rect('F02_screen_anti_vandal_rubber_gasket',-.224,.174,1.073,1.344,.011,face_y+.010,.017,MATTE)
 # realistic bevel-shaped aperture lip with brighter aluminum trim
-ring_rect('F03_machined_screen_bezel',-.221,.171,1.085,1.333,.008,face_y-.008,.008,BRIGHT)
-ring_rect('F04_screen_inner_wall',-.195,.147,1.108,1.312,.015,face_y+.028,.055,SCREEN_FRAME)
+poly_plate('F03_machined_screen_bezel', [(-.229,1.077),(.179,1.077),(.179,1.341),(-.229,1.341)], [rect_loop((-.221,.171,1.085,1.333))], face_y-.0016,.0013,BRIGHT)
+ring_rect('F04_screen_inner_wall',-.195,.147,1.108,1.312,.015,face_y+.031,.026,SCREEN_FRAME)
 # display glass deeper than outer aluminium; very slightly pitched; 2 triangle glass surface
 plane('F05_recessed_worn_LCD_glass',[
  (-.178,face_y+.067,1.110),(.128,face_y+.067,1.110),(.128,face_y+.083,1.297),(-.178,face_y+.083,1.297)],LCD)
@@ -373,20 +373,24 @@ box_obj('F06_keypad_silver_sidepanel',(.151,face_y+.044,1.217),(.050,.022,.196),
 ring_disc('P01_coin_insertion_satin_chrome_ring',.255,face_y-.009,1.242,.025,.015,.005,BRIGHT)
 disc('P02_coin_slot_dark_inset',.255,face_y-.007,1.242,.014,.002,HOLE)
 box_obj('P03_vertical_coin_slot_cut',(.255,face_y-.011,1.242),(.003,.002,.021),GUNMETAL)
-# bottom metal slot with pocket, reeded ticket guides
-ring_rect('T01_ticket_exit_steel_trim',-.192,.144,.686,.736,.007,face_y-.009,.008,BRIGHT)
-box_obj('T02_ticket_delivery_void',(-.024,face_y+.032,.708),(.322,.006,.035),HOLE)
-box_obj('T03_ticket_slot_backing',(-.024,face_y+.052,.701),(.297,.005,.029),GUNMETAL)
-box_obj('T04_lower_ticket_lip',(-.023,face_y-.015,.687),(.330,.020,.008),BRIGHT)
-box_obj('T05_ticket_feeder_guides',(-.023,face_y+.019,.731),(.30,.025,.003),DARK)
-for ix in range(17):
- x=-.165+ix*.019
- box_obj('T06_rib_%02d'%ix,(x,face_y+.027,.705),(.003,.013,.009),DARK)
+# FLUSH TICKET EXIT V2 — single continuous surround and recessed dark opening.
+# V1 had overlapping rectangular prisms, a 20mm-protruding lip and 17 floating
+# ribs. That created hard black strips, sparkling reflections, and apparent
+# surface flicker. All flush front metal now has separate >1mm depth clearance.
+poly_plate('T01_ticket_exit_unified_flush_bezel',
+    [(-.199,.679),(.151,.679),(.151,.743),(-.199,.743)],
+    [rect_loop((-.192,.144,.686,.736))],
+    face_y-.0015,.0011,BRIGHT)
+# Uniform dark cavity, recessed 8mm; black is not a reflective green surface.
+plane('T02_ticket_exit_dark_recess',
+    [(-.190,face_y+.008,.688),(.142,face_y+.008,.688),(.142,face_y+.008,.734),(-.190,face_y+.008,.734)],HOLE)
+# Very thin horizontal inner guide, BEHIND the facade and clear of the cavity.
+box_obj('T03_flush_delivery_guide',(-.024,face_y+.005,.692),(.323,.002,.0025),GUNMETAL)
 # pale worn circular circle left button and right lower button
-ring_disc('P04_contactless_white_trim',-.277,face_y-.014,.712,.032,.026,.003,GUNMETAL)
-disc('P05_contactless_aged_plastic',-.277,face_y-.015,.712,.025,.006,BUTTON)
-disc('P06_lower_right_pale_push_button',.273,face_y-.013,.674,.021,.009,WHITE)
-disc('P07_center_scuffed_round_pictogram',-.006,face_y-.006,.855,.029,.002,BUTTON)
+ring_disc('P04_contactless_white_trim',-.277,face_y-.0017,.712,.032,.026,.0017,GUNMETAL)
+disc('P05_contactless_aged_plastic',-.277,face_y-.0021,.712,.025,.002,BUTTON)
+disc('P06_lower_right_pale_push_button',.273,face_y-.002,.674,.021,.0025,WHITE)
+disc('P07_center_scuffed_round_pictogram',-.006,face_y-.0018,.855,.029,.0018,BUTTON)
 # Below main panel, tiny badge and mirrored fastening screws
 for i,x in enumerate([-.347,.347]):
  for k,z in enumerate([.505,.974]):
@@ -433,7 +437,7 @@ except Exception as e:
 
 bounds=np.array(sc.bounds); size=bounds[1]-bounds[0]
 report={
- 'model':'BVB Basel legacy outdoor ticket machine; reference-led, non-certified reconstruction',
+ 'model':'BVB Basel legacy outdoor ticket machine v2 flat-front repair; reference-led, non-certified reconstruction',
  'units':'metres','orientation':{'front':'-Y','height':'+Z','width':'+X'},
  'estimated_shell_dimensions_m':{'width':W,'depth':D,'height':H},
  'estimated_pedestal_height_m':BASE_H,
@@ -441,6 +445,7 @@ report={
  'component_count':len(components),'total_triangles':sum(x['triangles'] for x in components),
  'texture_files':sorted(f.name for f in TEX.iterdir()),'parts':components,
  'reference_notes':['3 supplied views: front left 3/4; upper left side; full frontal','No machine serial number or manufacturer dimension plate visible','Cartographic side graphic is illustrative, not a BVB official/functional map','Top black circular object in second photo omitted as an unconfirmed loose object'],
+ 'geometry_fix':'Unified flush ticket bezel, removed overlapping ribs and 20mm lip, reduced faceplate and control offsets, and fixed protruding LCD trim',
  'qa_thresholds':{'target_triangle_count':'<25000','nonempty_materials':'true','no_missing_external_gltf_textures':'GLB self-contained'}
 }
 (ROOT/'qa_model_report.json').write_text(json.dumps(report,indent=2))
